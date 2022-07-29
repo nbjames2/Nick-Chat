@@ -1,6 +1,12 @@
 #build environment
 FROM node:10.20.1-alpine as build
 ENV NODE_ENV production
+ENV REACT_APP_FIREBASE_APIKEY=
+ENV REACT_APP_FIREBASE_AUTHDOMAIN=
+ENV REACT_APP_FIREBASE_DATABASEURL=
+ENV REACT_APP_FIREBASE_PROJECTID=
+ENV REACT_APP_FIREBASE_STORAGEBUCKET=
+ENV REACT_APP_FIREBASE_SENDERID=
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]

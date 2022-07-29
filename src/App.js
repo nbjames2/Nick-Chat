@@ -7,12 +7,12 @@ import User from './components/User';
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCr5SljJUNL1yTx5HSV92r7LvMlgmPS2jA",
-  authDomain: "bloc-jams-chat-22790.firebaseapp.com",
-  databaseURL: "https://bloc-jams-chat-22790.firebaseio.com",
-  projectId: "bloc-jams-chat-22790",
-  storageBucket: "bloc-jams-chat-22790.appspot.com",
-  messagingSenderId: "970001352980"
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASEURL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDERID
 };
 firebase.initializeApp(config);
 
