@@ -1,19 +1,18 @@
 #build environment
-FROM node:10.20.1-alpine as build
+FROM node:16-alpine as build
 ENV NODE_ENV production
-ENV REACT_APP_FIREBASE_APIKEY=
-ENV REACT_APP_FIREBASE_AUTHDOMAIN=
-ENV REACT_APP_FIREBASE_DATABASEURL=
-ENV REACT_APP_FIREBASE_PROJECTID=
-ENV REACT_APP_FIREBASE_STORAGEBUCKET=
-ENV REACT_APP_FIREBASE_SENDERID=
+ENV VITE_FIREBASE_APIKEY=
+ENV VITE_FIREBASE_AUTHDOMAIN=
+ENV VITE_FIREBASE_DATABASEURL=
+ENV VITE_FIREBASE_PROJECTID=
+ENV VITE_FIREBASE_STORAGEBUCKET=
+ENV VITE_FIREBASE_SENDERID=
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm ci --silent
-RUN npm install react-scripts@3.4.1 -g --silent
 COPY . .
-RUN npm run build
+RUN yarn install
+RUN yarn run build
 
 # production environment
 FROM nginx:stable-alpine
