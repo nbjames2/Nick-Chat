@@ -31,7 +31,7 @@ const RoomList = ({ db, setActiveRoom, user, activeRoom }) => {
   };
 
   const roomHighlight = (name) => {
-    if (activeRoom.name === name) {
+    if (activeRoom?.name === name) {
       return '#5C6672';
     }
     return '';

@@ -42,9 +42,9 @@ const MessageList = ({ user, activeRoom, }) => {
       const postData = {
         content: newMessage,
         sentAt: Date.now(),
-        username: user.displayName
+        username: user?.displayName
       };
-      createData(postData, 'messages/' + activeRoom.key);
+      createData(postData, 'messages/' + activeRoom?.key);
       setNewMessage('')
     }
   };
@@ -66,7 +66,7 @@ const MessageList = ({ user, activeRoom, }) => {
 
   return (
     <section id='messages-wrapper'>
-      <h1 className='room-title'>Room: {activeRoom.name}</h1>
+      <h1 className='room-title'>Room: {activeRoom?.name || ''}</h1>
       <section id='message-list'>
         {renderMessages()}
         <form id='send-message'>
