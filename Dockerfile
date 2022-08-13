@@ -7,6 +7,7 @@ ENV VITE_FIREBASE_DATABASEURL=
 ENV VITE_FIREBASE_PROJECTID=
 ENV VITE_FIREBASE_STORAGEBUCKET=
 ENV VITE_FIREBASE_SENDERID=
+ENV VITE_FIREBASE_APPID=
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
